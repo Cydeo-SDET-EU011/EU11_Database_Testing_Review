@@ -133,3 +133,46 @@ where salary != (select max(salary) from EMPLOYEES);
 select FIRST_NAME, LAST_NAME, SALARY from EMPLOYEES
 where SALARY = (select max(salary) from EMPLOYEES
                 where salary != (select max(salary) from EMPLOYEES));
+
+-- string functions
+-- concatination  ||
+select FIRST_NAME, LAST_NAME from EMPLOYEES;
+select FIRST_NAME || LAST_NAME from EMPLOYEES;
+select FIRST_NAME ||' '|| LAST_NAME from EMPLOYEES;
+
+select email from EMPLOYEES;
+select email||'@gmail.com' from EMPLOYEES;
+
+--lower and upper
+select lower(email) from EMPLOYEES;
+select upper(FIRST_NAME)from EMPLOYEES;
+
+select FIRST_NAME ||' '|| upper(LAST_NAME) from EMPLOYEES;
+
+-- initcap
+select initcap(EMAIL) from EMPLOYEES;
+
+--substr
+select FIRST_NAME, substr(FIRST_NAME,1,3) from EMPLOYEES;
+select STREET_ADDRESS, substr(STREET_ADDRESS, 3,5) from LOCATIONS;
+
+-- virtual table
+create view fullName as select FIRST_NAME ||' '|| upper(LAST_NAME) as fullname from EMPLOYEES;
+
+create view email as select FIRST_NAME ||'.'||LAST_NAME||'@gmail.com' as email from EMPLOYEES;
+
+-- join
+
+
+select COUNTRY_ID from COUNTRIES;
+select REGION_ID from REGIONS;
+
+select COUNTRY_NAME , region_name from COUNTRIES
+inner join REGIONS
+on COUNTRIES.REGION_ID = REGIONS.REGION_ID;
+
+-- (INNER) JOIN: Returns records that have matching values in both tables
+-- LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+-- RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+-- FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
