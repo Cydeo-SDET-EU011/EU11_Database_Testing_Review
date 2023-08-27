@@ -181,4 +181,54 @@ select city, COUNTRY_NAME from COUNTRIES
 inner join LOCATIONS
 on COUNTRIES.COUNTRY_ID = LOCATIONS.COUNTRY_ID;
 
+-- left join
+select FIRST_NAME, LAST_NAME, DEPARTMENT_NAME from EMPLOYEES
+left join DEPARTMENTS
+on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
+
+select FIRST_NAME, LAST_NAME, DEPARTMENT_NAME from EMPLOYEES e
+left join DEPARTMENTS d
+on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+select FIRST_NAME, LAST_NAME, DEPARTMENT_NAME from EMPLOYEES e
+                                                       left join DEPARTMENTS d
+                                                                 on e.DEPARTMENT_ID = d.DEPARTMENT_ID
+where DEPARTMENT_NAME = 'Shipping';
+
+-- right join
+select FIRST_NAME , END_DATE from EMPLOYEES
+left join JOB_HISTORY
+on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
+
+
+select FIRST_NAME , END_DATE from EMPLOYEES
+right join JOB_HISTORY
+on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
+
+select FIRST_NAME , END_DATE from EMPLOYEES
+                                      right join JOB_HISTORY
+                                                 on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID
+where FIRST_NAME like '___';
+
+--outer join
+select DEPARTMENT_NAME, CITY from DEPARTMENTS
+full outer join LOCATIONS
+on DEPARTMENTS.LOCATION_ID = LOCATIONS.LOCATION_ID;
+
+select DEPARTMENT_NAME, CITY from DEPARTMENTS
+                                      full outer join LOCATIONS
+                                                      on DEPARTMENTS.LOCATION_ID = LOCATIONS.LOCATION_ID
+where CITY = 'Seattle';
+
+-- self join
+select e1.FIRST_NAME, e1.last_name, e1.EMPLOYEE_ID, e2.MANAGER_ID from EMPLOYEES e1
+join EMPLOYEES e2
+on e1.EMPLOYEE_ID = e2.MANAGER_ID;
+
+SELECT e1.first_name, e1.last_name, e1.manager_id, e2.last_name
+FROM employees e1 JOIN employees e2
+                       ON e1.manager_id = e2. employee_id;
+
+
+
 
