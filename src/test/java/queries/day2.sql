@@ -51,3 +51,85 @@ where FIRST_NAME like 'D__%_';
 
 -- aggrate functions
 -- min
+select min(salary) from EMPLOYEES;
+
+--max
+select max(salary) from EMPLOYEES;
+
+select min(salary),max(salary) from EMPLOYEES;
+
+-- avg and round
+select avg(salary) from EMPLOYEES;
+
+select round(avg(salary))from EMPLOYEES;
+
+select round(avg(salary),0) from EMPLOYEES;
+
+--sum
+select sum(salary) from EMPLOYEES;
+
+-- group by
+select count(FIRST_NAME),DEPARTMENT_ID from EMPLOYEES
+group by DEPARTMENT_ID;
+
+select max(SALARY),DEPARTMENT_ID from EMPLOYEES
+group by DEPARTMENT_ID;
+
+select count(JOB_ID) from EMPLOYEES;
+select distinct JOB_ID from EMPLOYEES;
+
+select JOB_ID from EMPLOYEES;
+select JOB_ID from EMPLOYEES
+group by JOB_ID;
+
+select JOB_ID, round(avg(salary))from EMPLOYEES
+group by JOB_ID;
+
+select DEPARTMENT_ID , sum(SALARY) from EMPLOYEES
+group by DEPARTMENT_ID;
+
+select DEPARTMENT_ID , sum(SALARY) from EMPLOYEES
+group by DEPARTMENT_ID
+having sum(salary) < 20000;
+
+-- difference between having and where
+-- where is put condition before group, applies to individual rows
+-- having is put condition after group, applies to grouped rows
+
+select DEPARTMENT_ID, count(SALARY) from EMPLOYEES
+group by DEPARTMENT_ID
+having count(salary) < 20;
+
+-- row number
+select FIRST_NAME from EMPLOYEES
+where ROWNUM <= 10;
+
+select FIRST_NAME from EMPLOYEES
+where ROWNUM < 11;
+
+-- subquery
+select max(salary) from EMPLOYEES;
+
+select FIRST_NAME, LAST_NAME,salary from EMPLOYEES
+where SALARY = (select max(salary) from EMPLOYEES);
+
+select FIRST_NAME, LAST_NAME, salary from EMPLOYEES
+where SALARY = (select min(salary) from EMPLOYEES);
+
+
+select round(avg(salary)) from EMPLOYEES;
+
+select FIRST_NAME, salary from EMPLOYEES
+where SALARY > (select round(avg(salary)) from EMPLOYEES);
+
+
+--find out second highest salary
+select max(salary) from EMPLOYEES
+where salary < (select max(salary) from EMPLOYEES);
+
+select max(salary) from EMPLOYEES
+where salary != (select max(salary) from EMPLOYEES);
+
+select FIRST_NAME, LAST_NAME, SALARY from EMPLOYEES
+where SALARY = (select max(salary) from EMPLOYEES
+                where salary != (select max(salary) from EMPLOYEES));
