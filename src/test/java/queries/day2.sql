@@ -163,7 +163,13 @@ create view email as select FIRST_NAME ||'.'||LAST_NAME||'@gmail.com' as email f
 
 -- join
 
+-- (INNER) JOIN: Returns records that have matching values in both tables
+-- LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+-- RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+-- FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
 
+
+-- inner join
 select COUNTRY_ID from COUNTRIES;
 select REGION_ID from REGIONS;
 
@@ -171,8 +177,8 @@ select COUNTRY_NAME , region_name from COUNTRIES
 inner join REGIONS
 on COUNTRIES.REGION_ID = REGIONS.REGION_ID;
 
--- (INNER) JOIN: Returns records that have matching values in both tables
--- LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
--- RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
--- FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+select city, COUNTRY_NAME from COUNTRIES
+inner join LOCATIONS
+on COUNTRIES.COUNTRY_ID = LOCATIONS.COUNTRY_ID;
+
 
