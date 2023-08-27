@@ -229,6 +229,96 @@ SELECT e1.first_name, e1.last_name, e1.manager_id, e2.last_name
 FROM employees e1 JOIN employees e2
                        ON e1.manager_id = e2. employee_id;
 
+-- DDL
+--create table
+create table Teachers(
+    T_id Integer primary key,
+    T_name varchar(50),
+    T_branch varchar(20)
+);
+
+select * from TEACHERS;
+
+insert into TEACHERS values (1,'Jamal','Automation');
+insert into TEACHERS values (2,'Muhtar','Java');
+insert into TEACHERS values (3,'Adam','API');
+
+create table Students(
+    S_id integer primary key ,
+    S_name varchar(50),
+    S_branch varchar(20)
+);
+
+-- insert
+insert into STUDENTS values (1,'Ahmet','Java');
+insert into STUDENTS values (2,'Jenifer','API');
+insert into STUDENTS values (3,'Suarez','Automation');
+
+select * from STUDENTS;
 
 
+-- update
+update STUDENTS
+set S_BRANCH = 'Database Testing'
+where S_id = 3;
 
+-- delete
+delete STUDENTS
+where S_id = 2;
+
+-- alter
+-- add column
+alter table TEACHERS
+add Salary integer;
+
+select * from TEACHERS;
+
+
+-- change column name
+alter table TEACHERS
+rename column T_name to name;
+
+-- delete a column
+alter table TEACHERS
+drop column SALARY;
+
+-- rename a table
+alter table STUDENTS rename to allStudents;
+select * from allStudents;
+
+-- truncate
+truncate  table allStudents;
+
+-- delete table
+drop table allStudents;
+
+
+-- set operators
+-- union
+select FIRST_NAME, LAST_NAME from EMPLOYEES;
+
+select FIRST_NAME from EMPLOYEES
+union
+select LAST_NAME from EMPLOYEES;
+
+--union all
+select FIRST_NAME from EMPLOYEES
+union all
+select LAST_NAME from EMPLOYEES;
+
+--minus
+select SALARY from EMPLOYEES
+minus
+select COMMISSION_PCT from EMPLOYEES;
+
+select COMMISSION_PCT from EMPLOYEES
+    minus
+    select SALARY from EMPLOYEES;
+
+select SALARY from EMPLOYEES;
+select COMMISSION_PCT from EMPLOYEES;
+
+-- intersect
+select MANAGER_ID from EMPLOYEES
+intersect
+select EMPLOYEE_ID from EMPLOYEES;
