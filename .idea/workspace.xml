@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="JDBC projcet is created.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/officeHours/day1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="office hour task is added." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +102,7 @@
       <workItem from="1692620212000" duration="608000" />
       <workItem from="1693137679114" duration="15179000" />
       <workItem from="1693742344853" duration="7171000" />
-      <workItem from="1694118810250" duration="517000" />
+      <workItem from="1694118810250" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="project created">
       <option name="closed" value="true" />
@@ -179,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693748996756</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="office hour task is added.">
+      <created>1694119557837</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694119557837</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +196,7 @@
     <MESSAGE value="day2 continue..." />
     <MESSAGE value="day2 continue... with set operators" />
     <MESSAGE value="JDBC projcet is created." />
-    <option name="LAST_COMMIT_MESSAGE" value="JDBC projcet is created." />
+    <MESSAGE value="office hour task is added." />
+    <option name="LAST_COMMIT_MESSAGE" value="office hour task is added." />
   </component>
 </project>
