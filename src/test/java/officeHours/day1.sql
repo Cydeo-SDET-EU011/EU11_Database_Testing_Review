@@ -43,19 +43,55 @@ where JOB_ID like '%CLERK';
 SELECT EMAIL FROM EMPLOYEES
 WHERE EMAIL LIKE '___E__';
 -- 13. get me last_name according to their hire_date
+select LAST_NAME, HIRE_DATE from EMPLOYEES
+order by HIRE_DATE;
+
 -- 14. get me first_name ascending and salary descending
+select FIRST_NAME, SALARY from EMPLOYEES
+order by FIRST_NAME asc , SALARY desc ;
+
 -- 15. get me the number of manager_id from departments
+select MANAGER_ID from DEPARTMENTS;
+select count(MANAGER_ID) from DEPARTMENTS; -- count is not including null values
+
 -- 16. get me maximum salary of IT_PROG
+select max(SALARY) from EMPLOYEES
+where JOB_ID = 'IT_PROG';
+
         -- average salary of ST_CLERK
--- 17. get me all city name uppercase and address losercase
+select avg(salary) from EMPLOYEES
+where JOB_ID = 'ST_CLERK';
+-- 17. get me all city name uppercase and address lowercase
+select upper(CITY), lower(STREET_ADDRESS) from LOCATIONS;
 -- 18. get me every job_title length
+select JOB_TITLE, length(JOB_TITLE) from JOBS;
         -- get me firstname + last name
+select FIRST_NAME ||' '|| LAST_NAME as Full_Name from EMPLOYEES;
 -- 19. get me maximum salary of each department_id
+select max(SALARY),DEPARTMENT_ID from EMPLOYEES
+group by DEPARTMENT_ID;
+
 -- 20. get me how many employees in each job_id
+select JOB_Id, count(EMPLOYEE_ID) from EMPLOYEES
+group by JOB_Id;
+
 -- 21. get me salary information( min, max, sum, avg) of each job_id
+select JOB_ID, min(SALARY),max(SALARY),avg(SALARY),sum(SALARY)from EMPLOYEES
+group by JOB_ID;
 -- 22. get me job_id that total salary is more than 50000
+select JOB_ID, sum(salary) from EMPLOYEES
+group by JOB_ID
+having sum(SALARY) > 50000;
 -- 24. get me which job_id has average commission_pct over 20%
+select JOB_ID, avg(COMMISSION_PCT) from EMPLOYEES
+group by JOB_ID
+having avg(COMMISSION_PCT) > 0.2;
+
 -- 25. get me each manager_id max salary and find out those more than 10000
+select MANAGER_ID, max(salary) from EMPLOYEES
+where MANAGER_ID is not null
+group by MANAGER_ID
+having max(SALARY) > 10000;
 
 
 
