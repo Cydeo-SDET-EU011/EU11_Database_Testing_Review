@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="task 1 is being solved.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/officeHours/day1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/officeHours/day1.sql" afterDir="false" />
-    </list>
+    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="task 1 is been solved." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +103,7 @@
       <workItem from="1693137679114" duration="15179000" />
       <workItem from="1693742344853" duration="7171000" />
       <workItem from="1694118810250" duration="1024000" />
-      <workItem from="1694184598325" duration="6217000" />
+      <workItem from="1694184598325" duration="6478000" />
     </task>
     <task id="LOCAL-00001" summary="project created">
       <option name="closed" value="true" />
@@ -201,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694188171168</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="task 1 is been solved.">
+      <created>1694191349534</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694191349534</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +220,7 @@
     <MESSAGE value="JDBC projcet is created." />
     <MESSAGE value="office hour task is added." />
     <MESSAGE value="task 1 is being solved." />
-    <option name="LAST_COMMIT_MESSAGE" value="task 1 is being solved." />
+    <MESSAGE value="task 1 is been solved." />
+    <option name="LAST_COMMIT_MESSAGE" value="task 1 is been solved." />
   </component>
 </project>
