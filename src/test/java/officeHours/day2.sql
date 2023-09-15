@@ -1,16 +1,60 @@
 -- 1. get me first 10 result of first_name and job_id.
+select FIRST_NAME, JOB_ID from EMPLOYEES
+where ROWNUM <= 10;
 -- 2. get me all employees whose salary is lower than average
+select avg(salary) from EMPLOYEES;
+select FIRST_NAME,salary from EMPLOYEES
+where SALARY < (select avg(salary) from EMPLOYEES);
+
 -- 3. get me those departments whose employees more than department 80
+select count(DEPARTMENT_id) from EMPLOYEES
+where DEPARTMENT_id = 80;
+select DEPARTMENT_ID from EMPLOYEES
+group by DEPARTMENT_ID
+having count(DEPARTMENT_ID) > (select count(DEPARTMENT_id) from EMPLOYEES
+                               where DEPARTMENT_id = 80);
+
 -- 4. get me those employees who is older than any IT programmer in the company
+select min(HIRE_DATE) from EMPLOYEES where JOB_ID = 'IT_PROG';
+select FIRST_NAME, HIRE_DATE from EMPLOYEES
+where HIRE_DATE < (select min(HIRE_DATE) from EMPLOYEES where JOB_ID = 'IT_PROG');
+
 -- 5. get me first name and department name in same table
+select FIRST_NAME, DEPARTMENT_NAME from EMPLOYEES
+inner join DEPARTMENTS
+on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
+
 -- 6. get me job id and manager id in one table
+select JOB_ID , DEPARTMENTS.MANAGER_ID from EMPLOYEES
+inner join DEPARTMENTS
+on EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID;
 -- 7. get me department names and end date( if any employee quit)
+select DEPARTMENT_NAME from DEPARTMENTS;
+select END_DATE from JOB_HISTORY;
+select DEPARTMENT_NAME, END_DATE from DEPARTMENTS
+right join JOB_HISTORY
+on DEPARTMENTS.DEPARTMENT_ID = JOB_HISTORY.DEPARTMENT_ID;
+
+select DEPARTMENT_NAME, END_DATE from DEPARTMENTS
+                                          left join JOB_HISTORY
+                                                     on DEPARTMENTS.DEPARTMENT_ID = JOB_HISTORY.DEPARTMENT_ID
+where END_DATE is null;
+
 --8. get me job id and job title together
+select EMPLOYEEs.JOB_ID, JOB_TITLE from EMPLOYEES
+join JOBS
+on EMPLOYEES.JOB_ID = JOBS.JOB_ID;
 -- 9. get me first name who left the company
+select FIRST_NAME, END_DATE from EMPLOYEES
+right join JOB_HISTORY
+on EMPLOYEES.EMPLOYEE_ID = JOB_HISTORY.EMPLOYEE_ID;
+
 -- 10. get me first name and job title for those whose salary is equal to max salary of that job  title
+select FIRST_NAME, JOB_TITLE, MAX_SALARY, salary from EMPLOYEES
+right join JOBS
+on EMPLOYEES.salary = jobs.MAX_SALARY;
 --11.get me department name, city in same table
 --12. get me first name , start date, end date in same table
-
 --13. create a table name laptops, with id, brand, color, price
 --14. create table phones with id, brand, color, price
 

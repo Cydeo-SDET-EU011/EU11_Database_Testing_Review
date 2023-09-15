@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="task 1 is been solved." />
+    <list default="true" id="89be7a6e-ea58-4fc5-8af9-e465d901c7df" name="Changes" comment="office hour day2 task is added.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/officeHours/day2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/officeHours/day2.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2UG0608cmvyYKHdGXswuBfZidhz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -104,6 +110,8 @@
       <workItem from="1693742344853" duration="7171000" />
       <workItem from="1694118810250" duration="1024000" />
       <workItem from="1694184598325" duration="6478000" />
+      <workItem from="1694712779252" duration="331000" />
+      <workItem from="1694789630273" duration="2222000" />
     </task>
     <task id="LOCAL-00001" summary="project created">
       <option name="closed" value="true" />
@@ -205,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694191349534</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="office hour day2 task is added.">
+      <option name="closed" value="true" />
+      <created>1694712980574</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1694712980574</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +237,7 @@
     <MESSAGE value="office hour task is added." />
     <MESSAGE value="task 1 is being solved." />
     <MESSAGE value="task 1 is been solved." />
-    <option name="LAST_COMMIT_MESSAGE" value="task 1 is been solved." />
+    <MESSAGE value="office hour day2 task is added." />
+    <option name="LAST_COMMIT_MESSAGE" value="office hour day2 task is added." />
   </component>
 </project>
